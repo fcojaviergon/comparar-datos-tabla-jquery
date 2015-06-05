@@ -35,7 +35,7 @@
             $9.950.000
             <span>Iva incl.</span>
         </div>
-        <input type="checkbox" name="comparar" value="1">comparar
+        <input type="checkbox" name="comparar" value="2">comparar
     </div>
     <div class="contAcord2">
         <h3><span class="version">Version V3</span></h3>
@@ -43,7 +43,7 @@
             $9.950.000
             <span>Iva incl.</span>
         </div>
-       <input type="checkbox" name="comparar" value="1">comparar
+       <input type="checkbox" name="comparar" value="3">comparar
     </div>
 </div>
 <!-- //acordeon1 -->
@@ -512,9 +512,11 @@
     });
 
     function compararDiferencias() {
-
+		//Evaluar que existan mas de dos versiones para comparar
         if ($('input[name="comparar"]:checkbox:checked').length > 1) {
+			//Limpiar antes de eveluar.
             compararTodo();
+			//Eliminar columnas que no desean ser comparadad.
             $.each($("input[name='comparar']:checked"), function () {
                 var tab = parseInt($(this).val()) + 1;
                 $('.tab_content3 table tbody tr td:nth-child(' + tab + ')').show();
@@ -524,18 +526,26 @@
                 var tab = parseInt($(this).val()) + 1;
                 $('.tab_content3 table tbody tr td:nth-child(' + tab + ')').hide();
             });
+			//desplegar todas las tablas para poder eveluarlas con el parametro de columna oculta.
             $('.tab_content3').show();
+			//Colores de los botones para tablas.
             var activo = $('.tabs3').find('.active');
             $('.tabs3').find('li').removeClass("active");
-
+			//Recorrer todas la tablas
             $('.tab_content3').each(function () {
+				//Encontrar la tabla y recorrer los TR
                 $(this).find('table').each(function () {
+						//Encontrar tr obviar el primero
                     $(this).find('tr:not(:first-child)').each(function () {
                         var valores = [];
                         var check = true;
+						//Encontrar TD obviar el primero y no tomar en cuenta las columnas ocultas
+						//Aquí es donde hay que tener cuidado, al principio de este codigo se ejecuta $('.tab_content3').show();, si esto el codigo td:visible:not no toma encuenta ninguna columna de esas tablas
                         $(this).find('td:visible:not(:first-child)').each(function (index, value) {
+							//Recorrer los valores y guardarlos en un array
                             valores.push($(this).html())
                         })
+						//Recorrer array y evaluar si existe uno distinto.
                         if (valores.length > 0) {
 
 
@@ -546,7 +556,7 @@
                                 }
                             }
 
-
+							//Si existe al menos uno distinto se destaca con rojo.
                             if (check == false) {
                                 //$(this).find('td').css('color','red');
                                 $(this).find('td').css('background-color', 'red');
@@ -559,6 +569,7 @@
                 })
 
             })
+			//Restaurar tablas y seleccionar la activa.
             $('.tab_content3').hide();
             $('.tab_content3').eq(activo.index()).show();
             //console.log(activo.index());
