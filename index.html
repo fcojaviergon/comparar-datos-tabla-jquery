@@ -512,11 +512,11 @@
     });
 
     function compararDiferencias() {
-		//Evaluar que existan mas de dos versiones para comparar
+		//Evaluar que existan más de dos versiones para comparar
         if ($('input[name="comparar"]:checkbox:checked').length > 1) {
 			//Limpiar antes de eveluar.
             compararTodo();
-			//Eliminar columnas que no desean ser comparadad.
+			//Eliminar columnas que no desean ser comparadas.
             $.each($("input[name='comparar']:checked"), function () {
                 var tab = parseInt($(this).val()) + 1;
                 $('.tab_content3 table tbody tr td:nth-child(' + tab + ')').show();
@@ -526,7 +526,7 @@
                 var tab = parseInt($(this).val()) + 1;
                 $('.tab_content3 table tbody tr td:nth-child(' + tab + ')').hide();
             });
-			//desplegar todas las tablas para poder eveluarlas con el parametro de columna oculta.
+			//desplegar todas las tablas para poder evaluarlas con el parámetro de columna oculta.
             $('.tab_content3').show();
 			//Colores de los botones para tablas.
             var activo = $('.tabs3').find('.active');
@@ -540,7 +540,7 @@
                         var valores = [];
                         var check = true;
 						//Encontrar TD obviar el primero y no tomar en cuenta las columnas ocultas
-						//Aquí es donde hay que tener cuidado, al principio de este codigo se ejecuta $('.tab_content3').show();, si esto el codigo td:visible:not no toma encuenta ninguna columna de esas tablas
+						//Aquí es donde hay que tener cuidado, al principio de este código se ejecuta $('.tab_content3').show();, si esto el código td:visible:not no toma encuenta ninguna columna de esas tablas
                         $(this).find('td:visible:not(:first-child)').each(function (index, value) {
 							//Recorrer los valores y guardarlos en un array
                             valores.push($(this).html())
