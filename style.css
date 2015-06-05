@@ -1,0 +1,36 @@
+h1,h2,h3,h4,h5,h6{clear:both;font-family:latobold;text-transform:uppercase;letter-spacing:1px}
+a{color:#fefefe;outline:none;text-decoration:none;border:none;}
+ol,ul,li{list-type:none;list-style:none;letter-spacing:1px}
+
+
+.acordeon .section.precios .acordeon1 .contAcord2{float:left;width:200px;margin-top:1px;margin:auto;}
+
+.acordeon .section.precios .acordeon2 .boton a{float:left;text-align:center;margin-top:10px;background-color:#008000;margin-left:10px;margin-right:auto;display:block;padding:15px 10px}
+.acordeon .section.precios .acordeon2 .boton.compararV a{background-color:#1f1f1f}
+.acordeon .section.precios .acordeon2 .boton.compararD a{background-color:#d00910}
+
+.acordeon .section.precios .tabs3 {float:left;margin:auto;clear:both;}
+.acordeon .section.precios .tabs3 li{float:left;margin:auto;margin-top:1px;padding:20px;}
+.acordeon .section.precios .tabs3 li:first-child{margin-top:0}
+.acordeon .section.precios .tabs3 li a{background-color:#262626;padding:15px 10px;width:100%;float:left;}
+.acordeon .section.precios .tabs3 li a:hover{background-color:#f00}
+.acordeon .section.precios .tabs3 li.active a{background-color:#f00}
+
+
+.acordeon .section.precios .tab_content3{background-color:#ededed;color:#020202;clear:both;}
+.acordeon .section.precios .tab_content3 .v-1,.acordeon .section.precios .tab_content3 .v-2,.acordeon .section.precios .tab_content3 .v-3,.acordeon .section.precios .tab_content3 .v-4{width:12%}
+.acordeon .section.precios .tab_content3 tr:nth-child(odd){background-color:#fff}
+.acordeon .section.precios .tab_content3 tr td{padding:5px 10px;text-align:center;border-left:1px solid #d0d0d0;}
+.acordeon .section.precios .tab_content3 tr td:first-child{border-left:none}
+
+
+
+
+
+
+
+
+
+
+
+
